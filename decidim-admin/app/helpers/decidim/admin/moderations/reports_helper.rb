@@ -21,7 +21,7 @@ module Decidim
               else
                 content_tag(:li, author.name)
               end
-            end.join("").html_safe
+            end.join.html_safe
           end
         end
 

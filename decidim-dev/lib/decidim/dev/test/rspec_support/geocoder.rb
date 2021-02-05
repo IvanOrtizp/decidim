@@ -38,6 +38,7 @@ module Decidim::Map::Provider
   module Geocoding
     class Test < ::Decidim::Map::Geocoding; end
   end
+
   module Autocomplete
     class Test < ::Decidim::Map::Autocomplete
       def self.stubs
@@ -66,9 +67,11 @@ module Decidim::Map::Provider
       end
     end
   end
+
   module DynamicMap
     class Test < ::Decidim::Map::DynamicMap; end
   end
+
   module StaticMap
     class Test < ::Decidim::Map::StaticMap; end
   end

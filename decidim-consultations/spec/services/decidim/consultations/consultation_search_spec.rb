@@ -23,9 +23,9 @@ module Decidim
 
         it "returns the consultations containing the search in the title, subtitle or the description" do
           create_list(:consultation, 3, :published, organization: organization)
-          create(:consultation, :published, title: { 'en': "A dog in the title" }, organization: organization)
-          create(:consultation, :published, subtitle: { 'en': "A dog in the subtitle" }, organization: organization)
-          create(:consultation, :published, description: { 'en': "There is a dog in the office" }, organization: organization)
+          create(:consultation, :published, title: { en: "A dog in the title" }, organization: organization)
+          create(:consultation, :published, subtitle: { en: "A dog in the subtitle" }, organization: organization)
+          create(:consultation, :published, description: { en: "There is a dog in the office" }, organization: organization)
 
           expect(subject.size).to eq(3)
         end

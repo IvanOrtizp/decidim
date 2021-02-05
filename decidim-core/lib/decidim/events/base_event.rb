@@ -60,7 +60,7 @@ module Decidim
       # Caches the path for the given resource.
       def resource_path
         @resource_path ||= begin
-          if resource&.respond_to?(:polymorphic_resource_path)
+          if resource.respond_to?(:polymorphic_resource_path)
             resource.polymorphic_resource_path(resource_url_params)
           else
             resource_locator.path(resource_url_params)
@@ -71,7 +71,7 @@ module Decidim
       # Caches the URL for the given resource.
       def resource_url
         @resource_url ||= begin
-          if resource&.respond_to?(:polymorphic_resource_url)
+          if resource.respond_to?(:polymorphic_resource_url)
             resource.polymorphic_resource_url(resource_url_params)
           else
             resource_locator.url(resource_url_params)

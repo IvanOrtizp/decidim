@@ -186,6 +186,15 @@ module Decidim
           origin_values
         )
       end
+
+      def proposal_hidden?
+        Proposal.from_all_author_identities(current_user).not_hidden.only_amendables
+                .where(component: current_component).find_by(published_at)
+      end
+
+      # def proposal_hidden?
+      #   :proposal != (:hidden_proposal)
+      # end
     end
   end
 end

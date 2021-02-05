@@ -6,7 +6,7 @@ shared_context "with filterable context" do
   let(:filterable_concern) { "Decidim::#{module_name}::Admin::Filterable".constantize }
 
   let(:filterable_fake_controller) do
-    FILTERABLE_CONCERN ||= filterable_concern
+    FILTERABLE_CONCERN = filterable_concern
     class FilterableFakeController < Decidim::ApplicationController; include FILTERABLE_CONCERN; end
   end
 
